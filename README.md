@@ -1,26 +1,27 @@
-# 🧪 Avaliação Prática – Testes de API com Playwright
 
-Este repositório contém a solução do desafio técnico utilizando **Playwright** para automação de testes em uma API pública (JSONPlaceholder).
+# Avaliação Prática – Testes de API com Playwright
 
----
-
-## 🎯 Objetivo
-
-Realizar testes automatizados nos principais métodos HTTP (GET, POST, PUT, DELETE), utilizando a biblioteca [Playwright](https://playwright.dev/) com execução via linha de comando e relatório gerado em HTML.
+Este repositório apresenta a solução do desafio técnico utilizando **Playwright** para automação de testes em uma API pública (JSONPlaceholder).
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
+## Objetivo
 
-- [Playwright](https://playwright.dev/)
-- [Node.js](https://nodejs.org/)
-- Terminal PowerShell
-- Git + GitHub
-- API pública: [`https://jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com)
+Executar testes automatizados nos principais métodos HTTP (GET, POST, PUT, DELETE), utilizando a biblioteca [Playwright](https://playwright.dev/), com execução via linha de comando e geração de relatório em HTML.
 
 ---
 
-## 📂 Estrutura do Projeto
+## Ferramentas Utilizadas
+
+* [Playwright](https://playwright.dev/)
+* [Node.js](https://nodejs.org/)
+* Terminal PowerShell
+* Git e GitHub
+* API pública: [`https://jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com)
+
+---
+
+## Estrutura do Projeto
 
 ```
 avaliacao-playwright-api/
@@ -35,16 +36,16 @@ avaliacao-playwright-api/
 
 ---
 
-## ✅ Testes Implementados
+## Testes Implementados
 
-- `GET /posts/1`: Verifica status 200 e presença da propriedade `userId`
-- `POST /posts`: Criação de novo post com validação de status 201 e corpo da resposta
-- `PUT /posts/1`: Atualização de post e validação dos dados
-- `DELETE /posts/1`: Exclusão de post e verificação de status 200
+* `GET /posts/1`: Verifica o status 200 e a presença da propriedade `userId`
+* `POST /posts`: Criação de novo post com validação do status 201 e do corpo da resposta
+* `PUT /posts/1`: Atualização de post com verificação dos dados
+* `DELETE /posts/1`: Exclusão de post e verificação do status 200
 
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 1. Instale as dependências:
 
@@ -52,7 +53,7 @@ avaliacao-playwright-api/
 npm install
 ```
 
-2. Execute os testes com geração de relatório:
+2. Execute os testes com geração do relatório:
 
 ```bash
 npx playwright test --reporter=html
@@ -66,15 +67,14 @@ npx playwright show-report
 
 ---
 
-## 📄 Evidências
+## Evidências
 
-Relatório de testes disponível na pasta `playwright-report/`.  
-Todos os testes foram executados com sucesso ✅
-
----
-
-## 🧾 Conclusão
-
-O projeto demonstra domínio no uso do Playwright para testes automatizados de API, com boas práticas de organização, versionamento e geração de evidências.
+O relatório de execução está disponível na pasta `playwright-report/`.
+Todos os testes foram executados com sucesso.
 
 ---
+
+## Conclusão
+
+Este projeto demonstra a aplicação do Playwright para testes automatizados de API, com foco em organização, clareza na implementação e geração de evidências de execução.
+
