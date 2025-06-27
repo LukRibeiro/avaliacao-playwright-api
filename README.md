@@ -1,5 +1,4 @@
-
-# Avaliação Prática – Testes de API com Playwright
+#  Avaliação Prática – Testes de API com Playwright
 
 Este repositório apresenta a solução do desafio técnico utilizando **Playwright** para automação de testes em uma API pública (JSONPlaceholder).
 
@@ -7,74 +6,78 @@ Este repositório apresenta a solução do desafio técnico utilizando **Playwri
 
 ## Objetivo
 
-Executar testes automatizados nos principais métodos HTTP (GET, POST, PUT, DELETE), utilizando a biblioteca [Playwright](https://playwright.dev/), com execução via linha de comando e geração de relatório em HTML.
+Executar testes automatizados nos principais métodos HTTP (**GET, POST, PUT, DELETE**), abrangendo tanto **testes positivos quanto negativos**, com execução via linha de comando e geração de relatório em HTML.
 
 ---
 
-## Ferramentas Utilizadas
+##  Ferramentas Utilizadas
 
-* [Playwright](https://playwright.dev/)
-* [Node.js](https://nodejs.org/)
-* Terminal PowerShell
-* Git e GitHub
-* API pública: [`https://jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com)
+- [Playwright](https://playwright.dev/)
+- [Node.js](https://nodejs.org/)
+- Terminal PowerShell
+- Git e GitHub
+- API pública: [`https://jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com)
 
 ---
 
-## Estrutura do Projeto
+##  Estrutura do Projeto
 
-```
 avaliacao-playwright-api/
 ├── tests/
-│   └── api.test.js            # Testes automatizados de API
-├── playwright-report/         # Relatório gerado após execução
-├── test-results/              # Dados da execução (gerados automaticamente)
+│ ├── api.test.js # Testes de API - cenários positivos
+│ └── api-negative.spec.js # Testes de API - cenários negativos
+├── playwright-report/ # Relatório HTML (gerado automaticamente)
+├── test-results/ # Resultados da execução (gerado automaticamente)
 ├── .gitignore
 ├── package.json
 ├── README.md
-```
+
+markdown
+Copy
+Edit
 
 ---
 
 ## Testes Implementados
 
-* `GET /posts/1`: Verifica o status 200 e a presença da propriedade `userId`
-* `POST /posts`: Criação de novo post com validação do status 201 e do corpo da resposta
-* `PUT /posts/1`: Atualização de post com verificação dos dados
-* `DELETE /posts/1`: Exclusão de post e verificação do status 200
+### Cenários Positivos (`tests/api.test.js`)
+- **GET /posts/1**: Retorna status 200 e possui `userId`
+- **POST /posts**: Cria novo post e retorna status 201 com os dados enviados
+- **PUT /posts/1**: Atualiza um post existente e valida os dados retornados
+- **DELETE /posts/1**: Remove um post e retorna status 200
+
+### Cenários Negativos (`tests/api-negative.spec.js`)
+- **GET /posts/9999**: Tenta acessar recurso inexistente (esperado 404)
+- **POST /posts com campos faltando**: Retorna 201 (API fake não valida os campos)
+- **PUT /posts/9999**: Atualiza recurso inexistente (esperado 200)
+- **DELETE /posts/9999**: Tenta excluir recurso inexistente (esperado 200)
 
 ---
 
-## Como Executar
+##  Como Executar os Testes
 
 1. Instale as dependências:
-
 ```bash
 npm install
-```
+Execute os testes com relatório HTML:
 
-2. Execute os testes com geração do relatório:
-
-```bash
+bash
+Copy
+Edit
 npx playwright test --reporter=html
-```
+Visualize o relatório:
 
-3. Visualize o relatório:
-
-```bash
+bash
+Copy
+Edit
 npx playwright show-report
-```
+Observações
+O relatório é gerado automaticamente em playwright-report/
 
----
+Os testes cobrem tanto fluxos esperados (positivos) quanto comportamentos inesperados (negativos)
 
-## Evidências
+A API utilizada é apenas para fins de teste e não realiza persistência real
 
-O relatório de execução está disponível na pasta `playwright-report/`.
-Todos os testes foram executados com sucesso.
-
----
-
-## Conclusão
-
-Este projeto demonstra a aplicação do Playwright para testes automatizados de API, com foco em organização, clareza na implementação e geração de evidências de execução.
-
+ Autor
+Lucas Ribeiro
+GitHub: LukRibeiro
